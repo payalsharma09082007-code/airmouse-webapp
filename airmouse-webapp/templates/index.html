@@ -1,0 +1,148 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Air Mouse Dashboard</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+
+            <h2>🖐 Air Mouse</h2>
+
+            <nav>
+                <a href="#" class="active">Dashboard</a>
+                <a href="#controls">Controls</a>
+                <a href="#live">Live Detection</a>
+                <a href="#gestures">Gestures</a>
+            </nav>
+
+        </aside>
+
+        <!-- Main Dashboard -->
+        <main class="main-content">
+
+            <header>
+                <h1>Air Mouse Dashboard</h1>
+                <p>Control your computer using hand gestures</p>
+            </header>
+
+            <!-- Status Cards -->
+            <section class="cards">
+
+                <div class="card">
+                    <h3>Air Mouse</h3>
+                    <p id="mouseStatus">Not Started</p>
+                </div>
+
+                <div class="card">
+                    <h3>Camera</h3>
+                    <p id="cameraStatus">Not Connected</p>
+                </div>
+
+                <div class="card">
+                    <h3>Gesture Detection</h3>
+                    <p id="gestureStatus">Inactive</p>
+                </div>
+
+            </section>
+
+            <!-- Control Panel -->
+            <section class="control-panel" id="controls">
+
+                <h2>Air Mouse Controls</h2>
+
+                <p>Start or stop your Air Mouse system.</p>
+
+                <div class="buttons">
+
+                    <button class="start-btn" id="startBtn">
+                        Start Air Mouse
+                    </button>
+
+                    <button class="stop-btn" id="stopBtn">
+                        Stop Air Mouse
+                    </button>
+
+                    <button class="live-btn" id="liveBtn">
+                        Live Detection
+                    </button>
+
+                </div>
+
+            </section>
+
+            <!-- Live Detection -->
+            <section class="live-panel" id="live">
+
+                <h2>Live Hand Detection</h2>
+
+                <p>View hand movements and detected gestures here.</p>
+
+                <div class="camera-screen" id="cameraScreen">
+
+                    <p id="cameraMessage">
+                        📷 Camera preview will appear here
+                    </p>
+
+                </div>
+
+                <div class="detection-info">
+
+                    <h3>Detection Information</h3>
+
+                    <p>
+                        Detected Gesture:
+                        <span id="detectedGesture">Waiting...</span>
+                    </p>
+
+                    <p>
+                        Hand Tracking:
+                        <span id="trackingStatus">Inactive</span>
+                    </p>
+
+                </div>
+
+            </section>
+
+            <!-- Supported Gestures -->
+            <section class="gesture-panel" id="gestures">
+
+                <h2>Supported Gestures</h2>
+
+                <div class="gesture-list">
+
+                    <p>☝️ Index Finger - Move Cursor</p>
+
+                    <p>👌 Thumb + Index - Left Click</p>
+
+                    <p>✌️ Thumb + Middle - Right Click</p>
+
+                    <p>✋ Open Palm - Scroll</p>
+
+                    <p>✊ Closed Fist - Pause</p>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>
